@@ -19,6 +19,17 @@ public class MallOrder {
     @Column(name = "`descr`")
     private String descr;
 
+    public MallOrder(Integer id, Integer uid, Date date, String descr) {
+        this.id = id;
+        this.uid = uid;
+        this.date = date;
+        this.descr = descr;
+    }
+
+    public MallOrder() {
+        super();
+    }
+
     /**
      * @return id
      */
@@ -72,6 +83,6 @@ public class MallOrder {
      * @param descr
      */
     public void setDescr(String descr) {
-        this.descr = descr;
+        this.descr = descr == null ? null : descr.trim();
     }
 }

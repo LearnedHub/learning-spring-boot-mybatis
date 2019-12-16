@@ -1,10 +1,7 @@
 package cn.zhucogqi.model;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import javax.persistence.*;
 
-@JsonSerialize
 @Table(name = "`mall_user`")
 public class MallUser {
     @Id
@@ -20,6 +17,17 @@ public class MallUser {
 
     @Column(name = "`version`")
     private Integer version;
+
+    public MallUser(Integer id, String name, String addr, Integer version) {
+        this.id = id;
+        this.name = name;
+        this.addr = addr;
+        this.version = version;
+    }
+
+    public MallUser() {
+        super();
+    }
 
     /**
      * @return id
@@ -46,7 +54,7 @@ public class MallUser {
      * @param name
      */
     public void setName(String name) {
-        this.name = name;
+        this.name = name == null ? null : name.trim();
     }
 
     /**
@@ -60,7 +68,7 @@ public class MallUser {
      * @param addr
      */
     public void setAddr(String addr) {
-        this.addr = addr;
+        this.addr = addr == null ? null : addr.trim();
     }
 
     /**

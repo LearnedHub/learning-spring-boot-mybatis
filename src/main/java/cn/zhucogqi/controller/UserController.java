@@ -2,6 +2,7 @@ package cn.zhucogqi.controller;
 
 import cn.zhucogqi.mapper.x.MallUserMapperX;
 import cn.zhucogqi.model.MallUser;
+import cn.zhucogqi.services.UserService;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,21 +20,21 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    private MallUserMapperX mallUserMapper;
+    private UserService userService;
 
-    public UserController(MallUserMapperX mallUserMapper) {
-        this.mallUserMapper = mallUserMapper;
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
 
     @RequestMapping("/user/{userId}")
     public MallUser user(@PathVariable Integer userId) {
-        MallUser user = mallUserMapper.selectByPrimaryKey(userId);
+        MallUser user = userService.getUserById(userId);
         return user != null ? user : new MallUser();
     }
 
     @RequestMapping("/users")
     public List<MallUser> users() {
-        return mallUserMapper.selectAll();
+        return userService.getAllUsers();
     }
 
     @RequestMapping("/excp")
@@ -43,7 +44,7 @@ public class UserController {
 
     @RequestMapping("/userx/{userId}")
     public MallUser userx(@PathVariable Integer userId) {
-        MallUser user = mallUserMapper.getUser(userId);
+        MallUser user = userService.getUserById(userId);
         return user != null ? user : new MallUser();
     }
 }
