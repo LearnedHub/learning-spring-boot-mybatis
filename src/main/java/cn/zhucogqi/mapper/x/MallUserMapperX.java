@@ -1,8 +1,7 @@
-package cn.zhucogqi.learningspringbootmybatis.mapper.x;
+package cn.zhucogqi.mapper.x;
 
-import cn.zhucogqi.learningspringbootmybatis.base.BaseMapper;
-import cn.zhucogqi.learningspringbootmybatis.mapper.MallUserMapper;
-import cn.zhucogqi.learningspringbootmybatis.model.MallUser;
+import cn.zhucogqi.base.BaseMapper;
+import cn.zhucogqi.model.MallUser;
 import org.apache.ibatis.annotations.Param;
 
 /**

@@ -1,4 +1,4 @@
-package cn.zhucogqi.learningspringbootmybatis;
+package cn.zhucogqi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

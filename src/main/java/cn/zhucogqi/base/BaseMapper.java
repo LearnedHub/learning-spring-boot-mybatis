@@ -1,4 +1,4 @@
-package cn.zhucogqi.learningspringbootmybatis.base;
+package cn.zhucogqi.base;
 
 import org.apache.ibatis.annotations.Select;
 import tk.mybatis.mapper.common.Mapper;

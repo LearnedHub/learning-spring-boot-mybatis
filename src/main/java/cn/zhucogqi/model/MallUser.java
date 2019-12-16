@@ -1,4 +1,4 @@
-package cn.zhucogqi.learningspringbootmybatis.model;
+package cn.zhucogqi.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 

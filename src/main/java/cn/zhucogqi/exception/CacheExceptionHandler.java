@@ -1,4 +1,4 @@
-package cn.zhucogqi.learningspringbootmybatis.exception;
+package cn.zhucogqi.exception;
 
 import com.alibaba.fastjson.JSON;
 import org.springframework.web.bind.annotation.ExceptionHandler;

@@ -1,9 +1,7 @@
-package cn.zhucogqi.learningspringbootmybatis.controller;
+package cn.zhucogqi.controller;
 
-import cn.zhucogqi.learningspringbootmybatis.mapper.MallUserMapper;
-import cn.zhucogqi.learningspringbootmybatis.mapper.x.MallUserMapperX;
-import cn.zhucogqi.learningspringbootmybatis.model.MallUser;
-import org.springframework.beans.factory.annotation.Autowired;
+import cn.zhucogqi.mapper.x.MallUserMapperX;
+import cn.zhucogqi.model.MallUser;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,8 +19,11 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    @Autowired
     private MallUserMapperX mallUserMapper;
+
+    public UserController(MallUserMapperX mallUserMapper) {
+        this.mallUserMapper = mallUserMapper;
+    }
 
     @RequestMapping("/user/{userId}")
     public MallUser user(@PathVariable Integer userId) {
