@@ -3,6 +3,7 @@ package cn.zhucogqi.learningspringbootmybatis.mapper.x;
 import cn.zhucogqi.learningspringbootmybatis.base.BaseMapper;
 import cn.zhucogqi.learningspringbootmybatis.mapper.MallUserMapper;
 import cn.zhucogqi.learningspringbootmybatis.model.MallUser;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @author ：Jobsz
@@ -14,5 +15,5 @@ import cn.zhucogqi.learningspringbootmybatis.model.MallUser;
  */
 public interface MallUserMapperX extends BaseMapper<MallUser> {
 
-    MallUser getUser(Integer uid);
+    MallUser getUser(@Param("uid") Integer uid);
 }
