@@ -8,6 +8,7 @@
 > 使用`RestControllerAdvice`，但是需要在application.properties中配置
 >
 > spring.mvc.throw-exception-if-no-handler-found=true
+>
 > spring.resources.add-mappings=false #不跟static/error下的静态文件映射
 
 - 发现一个问题
