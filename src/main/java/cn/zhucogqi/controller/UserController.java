@@ -1,8 +1,8 @@
 package cn.zhucogqi.controller;
 
-import cn.zhucogqi.mapper.x.MallUserMapperX;
-import cn.zhucogqi.model.MallUser;
-import cn.zhucogqi.services.UserService;
+import cn.zhucogqi.domain.MallUser;
+import cn.zhucogqi.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,21 +20,22 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    private UserService userService;
+    private final UserRepository userRepository;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
+    @Autowired//可以不写
+    public UserController(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @RequestMapping("/user/{userId}")
     public MallUser user(@PathVariable Integer userId) {
-        MallUser user = userService.getUserById(userId);
+        MallUser user = this.userRepository.getUserById(userId);
         return user != null ? user : new MallUser();
     }
 
     @RequestMapping("/users")
     public List<MallUser> users() {
-        return userService.getAllUsers();
+        return this.userRepository.getAllUsers();
     }
 
     @RequestMapping("/excp")
@@ -42,9 +43,14 @@ public class UserController {
         throw new RuntimeException("测试失败");
     }
 
+    /**
+     * 测试过滤属性为null的数据，在mapper中只取出了一部分数据
+     * @param userId
+     * @return
+     */
     @RequestMapping("/userx/{userId}")
     public MallUser userx(@PathVariable Integer userId) {
-        MallUser user = userService.getUserById(userId);
+        MallUser user = this.userRepository.getUser(userId);
         return user != null ? user : new MallUser();
     }
 }

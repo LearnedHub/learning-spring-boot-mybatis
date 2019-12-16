@@ -1,7 +1,7 @@
 package cn.zhucogqi.mapper.x;
 
 import cn.zhucogqi.base.BaseMapper;
-import cn.zhucogqi.model.MallUser;
+import cn.zhucogqi.domain.MallUser;
 import org.apache.ibatis.annotations.Param;
 
 /**

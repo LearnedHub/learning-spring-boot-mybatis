@@ -49,11 +49,15 @@ public class CacheExceptionHandler {
 
     @ExceptionHandler(NoHandlerFoundException.class)
     public String handlerNotFoundException(Exception e) {
-        return new Error("404", "Not Found").toString();
+        StringBuilder em = new StringBuilder("Not Found:");
+        em.append(e.getLocalizedMessage());
+        return new Error("404", em.toString()).toString();
     }
 
     @ExceptionHandler(Exception.class)
     public String handlerNException(Exception e) {
-        return new Error("500", "Server Error").toString();
+        StringBuilder em = new StringBuilder("Server Error:");
+        em.append(e.getLocalizedMessage());
+        return new Error("500", em.toString()).toString();
     }
 }

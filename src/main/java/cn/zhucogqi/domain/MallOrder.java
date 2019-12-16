@@ -1,4 +1,4 @@
-package cn.zhucogqi.model;
+package cn.zhucogqi.domain;
 
 import java.util.Date;
 import javax.persistence.*;

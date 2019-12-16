@@ -1,4 +1,4 @@
-package cn.zhucogqi.model;
+package cn.zhucogqi.domain;
 
 import javax.persistence.*;
 

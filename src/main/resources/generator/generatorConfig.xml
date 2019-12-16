@@ -24,7 +24,7 @@
                         password="dbadmin">
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="cn.zhucogqi.model" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="cn.zhucogqi.domain" targetProject="src/main/java">
             <property name="trimStrings" value="true"/>
             <property name="constructorBased" value="true"/>
         </javaModelGenerator>
