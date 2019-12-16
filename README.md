@@ -11,6 +11,10 @@
 >
 > spring.resources.add-mappings=false #不跟static/error下的静态文件映射
 
+- 返回Json过滤掉null的属性，在application.properties中配置
+
+> spring.jackson.default-property-inclusion=non_null# 返回不为空的属性信息
+
 - 发现一个问题
 
 > 使用mysql-java-driver高版本8以上，在数据库中比如有user这个表，在url中指定了对应的数据库了，MBG生成model时，但是还是会把数据里面系统的user生成出来。
