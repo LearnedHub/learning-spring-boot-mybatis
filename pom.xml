@@ -21,7 +21,7 @@
         <druid.version>1.1.20</druid.version>
         <druid.starter.version>1.1.9</druid.starter.version>
         <mybatis.starter.version>2.1.1</mybatis.starter.version>
-        <fastjson.version>1.2.62</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
     </properties>
 
     <dependencies>
